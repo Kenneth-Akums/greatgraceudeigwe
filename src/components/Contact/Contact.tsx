@@ -199,7 +199,7 @@ export function Contact() {
                     id="contact-name"
                     type="text"
                     required
-                    placeholder="e.g. Kenneth Akunwanne"
+                    placeholder="Your full name"
                     className={styles.input}
                     value={formState.name}
                     onChange={(e) =>
