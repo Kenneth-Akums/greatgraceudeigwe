@@ -60,7 +60,9 @@ export function Contact() {
     setErrorMsg(null);
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${PROFILE.email}`, {
+      const response = await fetch(
+        'https://formsubmit.co/ajax/92f1d5857ae7654d05b4e598ea877c68',
+        {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
