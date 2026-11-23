@@ -59,29 +59,32 @@ export function Contact() {
     setSubmitting(true);
     setErrorMsg(null);
 
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 12000);
+
     try {
-      const response = await fetch(
-        'https://formsubmit.co/ajax/92f1d5857ae7654d05b4e598ea877c68',
-        {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
+        signal: controller.signal,
         body: JSON.stringify({
+          access_key: '292cc2c9-ff74-463c-8ddb-a3a8848ffa73',
+          subject: `New Executive Inquiry from ${formState.name}`,
+          from_name: 'Greatgrace Udeigwe Portfolio',
           name: formState.name,
           email: formState.email,
-          _replyto: formState.email,
           operational_need: formState.need,
           message: formState.context || 'No additional notes provided.',
-          _subject: `New Executive Inquiry from ${formState.name}`,
-          _template: 'table',
-          _captcha: 'false',
+          botcheck: false,
         }),
       });
 
-      if (!response.ok) {
-        throw new Error('Could not deliver inquiry.');
+      const data = await response.json();
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Could not deliver inquiry.');
       }
 
       setSubmitted(true);
@@ -90,6 +93,7 @@ export function Contact() {
         `Unable to send right now. Please email ${PROFILE.email} directly using the button on the left.`
       );
     } finally {
+      window.clearTimeout(timeoutId);
       setSubmitting(false);
     }
   };
