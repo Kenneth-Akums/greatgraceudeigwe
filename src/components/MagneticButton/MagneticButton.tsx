@@ -9,6 +9,7 @@ interface MagneticButtonProps {
   variant?: 'primary' | 'secondary' | 'ghost';
   className?: string;
   type?: 'button' | 'submit';
+  disabled?: boolean;
   target?: string;
   rel?: string;
   ariaLabel?: string;
@@ -21,6 +22,7 @@ export function MagneticButton({
   variant = 'primary',
   className = '',
   type = 'button',
+  disabled = false,
   target,
   rel,
   ariaLabel,
@@ -73,6 +75,7 @@ export function MagneticButton({
       ) : (
         <button
           type={type}
+          disabled={disabled}
           className={combinedClass}
           onClick={onClick}
           aria-label={ariaLabel}

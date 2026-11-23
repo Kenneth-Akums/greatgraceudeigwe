@@ -54,7 +54,7 @@ export function Contact() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (formState.honey) return; // spam honeypot
+    if (submitting || formState.honey) return; // prevent double-submit & spam
 
     setSubmitting(true);
     setErrorMsg(null);
@@ -73,7 +73,7 @@ export function Contact() {
         body: JSON.stringify({
           access_key: '292cc2c9-ff74-463c-8ddb-a3a8848ffa73',
           subject: `New Executive Inquiry from ${formState.name}`,
-          from_name: 'Greatgrace Udeigwe Portfolio',
+          from_name: formState.name,
           name: formState.name,
           email: formState.email,
           operational_need: formState.need,
@@ -269,6 +269,7 @@ export function Contact() {
                 <div className={styles.submitRow}>
                   <MagneticButton
                     type="submit"
+                    disabled={submitting}
                     variant="primary"
                     className={styles.submitFull}
                   >

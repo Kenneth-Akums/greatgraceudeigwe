@@ -49,6 +49,12 @@
   transform: translateX(120%);
 }
 
+.btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .primary {
   background-color: var(--color-primary);
   color: var(--color-on-primary);
