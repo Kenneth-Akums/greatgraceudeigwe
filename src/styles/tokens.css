@@ -1,0 +1,125 @@
+:root {
+  /* Editorial Palette — Warm Espresso, Terracotta & Alabaster */
+  --color-primary: #6c2800;
+  --color-primary-container: #8b3e14;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffba9b;
+  --color-primary-fixed: #ffdbcc;
+
+  --color-tertiary: #4e1f00;
+  --color-tertiary-container: #88400d;
+  --color-tertiary-fixed: #ffdbc9;
+  --color-on-tertiary: #ffffff;
+
+  --color-secondary: #545f74;
+  --color-secondary-container: #d5e0f9;
+
+  --color-surface: #fcf9f3;
+  --color-surface-low: #f6f3ed;
+  --color-surface-container: #f0eee8;
+  --color-surface-high: #ebe8e2;
+  --color-surface-highest: #e5e2dc;
+  --color-surface-lowest: #ffffff;
+
+  --color-on-surface: #1c1c18;
+  --color-on-surface-variant: #55433b;
+  --color-outline: #88736a;
+  --color-outline-variant: #dbc1b7;
+  --color-error: #ba1a1a;
+
+  /* Theme-aware glass & special surfaces */
+  --glass-bg: rgba(252, 249, 243, 0.78);
+  --glass-bg-scrolled: rgba(252, 249, 243, 0.94);
+  --nav-pill-bg: rgba(240, 238, 232, 0.8);
+  --card-warm-bg: #f5ebe0;
+  --logo-surface: #ffffff;
+  --section-dark-start: #6c2800;
+  --section-dark-end: #4a1c00;
+
+  /* Typography */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Type Scale */
+  --text-display: clamp(2.35rem, 5vw, 4.15rem);
+  --text-headline-lg: clamp(1.85rem, 3.4vw, 2.75rem);
+  --text-headline-md: clamp(1.4rem, 2.2vw, 1.95rem);
+  --text-headline-sm: 1.25rem;
+  --text-body-lg: clamp(1.02rem, 1.2vw, 1.15rem);
+  --text-body-md: 0.98rem;
+  --text-body-sm: 0.875rem;
+  --text-label-md: 0.875rem;
+  --text-label-sm: 0.72rem;
+
+  /* Layout & Spacing */
+  --max-width: 1280px;
+  --gutter: clamp(1.1rem, 3vw, 2rem);
+  --header-height: 78px;
+  --section-py: clamp(4.5rem, 8vw, 7rem);
+
+  /* Radii */
+  --radius-sm: 0.625rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-2xl: 2.5rem;
+  --radius-full: 9999px;
+
+  /* Elevation & Borders */
+  --shadow-xs: 0 1px 2px rgba(28, 28, 24, 0.04);
+  --shadow-sm: 0 4px 16px rgba(28, 28, 24, 0.05);
+  --shadow-md: 0 12px 32px rgba(28, 28, 24, 0.08);
+  --shadow-lg: 0 24px 60px rgba(108, 40, 0, 0.14);
+  --shadow-primary: 0 10px 28px rgba(108, 40, 0, 0.22);
+  --border-subtle: 1px solid rgba(136, 115, 106, 0.18);
+  --border-strong: 1px solid rgba(108, 40, 0, 0.22);
+
+  /* Easing */
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Dark Theme — Warm Espresso Obsidian & Luminous Terracotta */
+[data-theme='dark'] {
+  --color-primary: #e08b57;
+  --color-primary-container: #5c280b;
+  --color-on-primary: #1a0d05;
+  --color-on-primary-container: #ffdbc9;
+  --color-primary-fixed: rgba(224, 139, 87, 0.18);
+
+  --color-tertiary: #f0a474;
+  --color-tertiary-container: #9c4a1a;
+  --color-tertiary-fixed: #ffdbc9;
+  --color-on-tertiary: #1a0d05;
+
+  --color-secondary: #9fb0cc;
+  --color-secondary-container: #262f3d;
+
+  --color-surface: #14110f;
+  --color-surface-low: #1b1714;
+  --color-surface-container: #241f1b;
+  --color-surface-high: #2d2621;
+  --color-surface-highest: #382f29;
+  --color-surface-lowest: #1f1a17;
+
+  --color-on-surface: #f5efe8;
+  --color-on-surface-variant: #c2b3a7;
+  --color-outline: #8c7b70;
+  --color-outline-variant: #3f352f;
+  --color-error: #ff8a80;
+
+  --glass-bg: rgba(20, 17, 15, 0.78);
+  --glass-bg-scrolled: rgba(20, 17, 15, 0.94);
+  --nav-pill-bg: rgba(36, 31, 27, 0.85);
+  --card-warm-bg: #261e19;
+  --logo-surface: #f7f4ef;
+  --section-dark-start: #2e1507;
+  --section-dark-end: #1c0c04;
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 6px 20px rgba(0, 0, 0, 0.34);
+  --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.44);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --shadow-primary: 0 10px 28px rgba(224, 139, 87, 0.24);
+  --border-subtle: 1px solid rgba(255, 232, 214, 0.1);
+  --border-strong: 1px solid rgba(224, 139, 87, 0.3);
+}

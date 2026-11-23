@@ -1,0 +1,279 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: var(--header-height);
+  padding-top: env(safe-area-inset-top, 0px);
+  z-index: 80;
+  background: var(--glass-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.3s var(--ease-editorial),
+    border-color 0.3s var(--ease-editorial),
+    box-shadow 0.3s var(--ease-editorial);
+}
+
+.scrolled {
+  background: var(--glass-bg-scrolled);
+  border-bottom-color: var(--color-outline-variant);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2.5rem);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.monogram {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(108, 40, 0, 0.2);
+  transition: transform 0.25s var(--ease-editorial), background-color 0.25s ease;
+}
+
+.brand:hover .monogram {
+  background: var(--color-tertiary);
+  transform: scale(1.04);
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.015em;
+  line-height: 1.15;
+  color: var(--color-on-surface);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.25s ease;
+}
+
+.brand:hover .brandName {
+  color: var(--color-primary);
+}
+
+.brandRole {
+  font-size: 0.56rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  line-height: 1.15;
+  color: var(--color-on-surface-variant);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.desktopNav {
+  display: none;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem;
+  border-radius: var(--radius-full);
+  background: var(--nav-pill-bg);
+  border: var(--border-subtle);
+}
+
+.navLink {
+  position: relative;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-on-surface-variant);
+  transition: color 0.25s ease;
+}
+
+.navLink:hover {
+  color: var(--color-on-surface);
+}
+
+.navLinkActive {
+  color: var(--color-on-primary);
+}
+
+.navLinkActive:hover {
+  color: var(--color-on-primary);
+}
+
+.activePill {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  z-index: 0;
+}
+
+.navLabel {
+  position: relative;
+  z-index: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+}
+
+.desktopCta {
+  display: none;
+}
+
+.ctaCompact {
+  padding: 0.68rem 1.3rem !important;
+  font-size: 0.82rem !important;
+}
+
+.menuBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--color-surface-lowest);
+  border: var(--border-subtle);
+  color: var(--color-on-surface);
+  box-shadow: var(--shadow-xs);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.menuBtn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.mobileDrawer {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: var(--gutter);
+  right: var(--gutter);
+  background: var(--color-surface-lowest);
+  border-radius: var(--radius-lg);
+  border: var(--border-subtle);
+  box-shadow: 0 24px 60px rgba(28, 28, 24, 0.16);
+  padding: 1rem;
+}
+
+.mobileList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mobileLink {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  transition: background-color 0.2s ease;
+}
+
+.mobileLink:hover {
+  background: var(--color-surface-low);
+  color: var(--color-primary);
+}
+
+.mobileIndex {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  opacity: 0.7;
+}
+
+.mobileCta {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.95rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+@media (min-width: 640px) {
+  .brand {
+    flex: 0 0 auto;
+    gap: 0.7rem;
+  }
+
+  .monogram {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    font-size: 0.95rem;
+  }
+
+  .desktopCta {
+    display: inline-flex;
+  }
+
+  .brandName {
+    font-size: 1.12rem;
+  }
+
+  .brandRole {
+    font-size: 0.67rem;
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+  }
+
+  .menuBtn {
+    display: none;
+  }
+
+  .mobileDrawer {
+    display: none;
+  }
+}
