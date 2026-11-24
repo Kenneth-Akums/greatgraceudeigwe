@@ -32,20 +32,22 @@
 
 .tabs {
   display: none;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
   padding: 0.35rem;
-  border-radius: var(--radius-full);
+  border-radius: var(--radius-lg);
   background: var(--color-surface-container);
   border: var(--border-subtle);
   width: fit-content;
+  max-width: 100%;
 }
 
 .tabBtn {
   position: relative;
-  padding: 0.55rem 1.15rem;
+  padding: 0.48rem 0.85rem;
   border-radius: var(--radius-full);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--color-on-surface-variant);
   transition: color 0.2s ease;

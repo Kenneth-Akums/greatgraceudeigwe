@@ -86,7 +86,7 @@ export function CaseStudies({ onInspectProject }: CaseStudiesProps) {
                       transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                     />
                   )}
-                  <span className={styles.tabLabel}>0{idx + 1}</span>
+                  <span className={styles.tabLabel}>{study.number}</span>
                 </button>
               );
             })}

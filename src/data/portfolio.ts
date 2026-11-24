@@ -6,6 +6,10 @@ import project3Img from '../assets/project-3-sops.png';
 import project4Img from '../assets/project-4-clickup-dark.jpg';
 import project5Img from '../assets/project-5-inbox.jpg';
 import project6Img from '../assets/project-6-meetings.jpg';
+import project7Img from '../assets/project-7-shopify.jpg';
+import project8Img from '../assets/project-8-airtable.png';
+import project9Img from '../assets/project-9-booking.jpg';
+import project10Img from '../assets/project-10-trello.jpg';
 import logoVerionX from '../assets/logo-verionx.png';
 import logoMavenAide from '../assets/logo-mavenaide.png';
 import logoLoveworld from '../assets/logo-loveworld.png';
@@ -344,6 +348,77 @@ export const CASE_STUDIES: CaseStudy[] = [
     image: project6Img,
     imageAlt: 'Structured executive Meeting Minutes document with summary and assigned action points',
     metrics: ['100% Agenda Coverage', 'Owner-Tracked Actions'],
+  },
+  {
+    id: 'shopify-storefront',
+    number: '07',
+    client: 'E-Commerce Operations',
+    tool: 'Shopify',
+    title: 'Shopify Store Setup & Product Merchandising',
+    problem:
+      'Product catalog lacked structured SKU tracking, pricing hierarchy, variant organization, and conversion-focused product copy.',
+    solution:
+      'Configured a full Shopify storefront with SKU & inventory tracking, psychological pricing (MSRP vs. Sale), SEO-optimized descriptions, and Shopify Metafields & Variants.',
+    result:
+      'Launched a clean, conversion-ready product experience with seamless variant selection and organized backend inventory management.',
+    ctaLabel: 'Inspect Shopify Storefront',
+    image: project7Img,
+    imageAlt: 'Shopify product storefront featuring Aura Smart Posture Corrector with variants and pricing',
+    metrics: ['SKU & Variant Architecture', 'SEO-Optimized Catalog'],
+  },
+  {
+    id: 'airtable-launch',
+    number: '08',
+    client: 'Digital Health Launch Ops',
+    tool: 'Airtable',
+    title: 'Product Launch Tracker in Airtable',
+    problem:
+      'Multi-phase app launch tasks across design, beta testing, and marketing lacked a structured relational database with clear ownership and deadlines.',
+    solution:
+      'Built a relational Airtable Launch Plan covering Market Analysis, UI/UX Design, Beta Testing, Marketing Assets, and Final Launch Review with color-coded status tags.',
+    result:
+      'Gave stakeholders a live, filterable single view of every launch milestone, owner, and due date.',
+    ctaLabel: 'Inspect Airtable Database',
+    image: project8Img,
+    imageAlt: 'Airtable Launch Plan grid tracking Remote Health Monitoring App milestones',
+    metrics: ['Relational Launch Grid', 'Color-Coded Status Views'],
+  },
+  {
+    id: 'appointment-booking',
+    number: '09',
+    client: 'Client Scheduling & Intake',
+    tool: 'Calendly & Zoho Bookings',
+    title: 'Automated Appointment Booking & Intake',
+    problem:
+      'Manual back-and-forth emails to schedule discovery calls and client consultations across time zones were wasting hours every week.',
+    solution:
+      'Configured automated Calendly, Google Calendar, and Zoho Bookings scheduling flows with time-zone detection, Zoom/Google Meet routing, and pre-call intake questions.',
+    result:
+      'Eliminated scheduling friction completely and ensured every discovery call starts with full client context.',
+    ctaLabel: 'Inspect Booking Workflow',
+    image: project9Img,
+    imageAlt: 'Calendly discovery call booking interface configured with automated availability and intake',
+    metrics: ['Zero Back-and-Forth', 'Auto Time-Zone Sync'],
+    externalUrl:
+      'https://drive.google.com/drive/folders/1_WW6QVJLFLTQJDPKRACLE6HDHA8KWZYK?usp=sharing',
+    externalLabel: 'Open Scheduling Portfolio Folder',
+  },
+  {
+    id: 'trello-workflow',
+    number: '10',
+    client: 'Agile Task Coordination',
+    tool: 'Trello',
+    title: 'Visual Kanban & Sprint Board in Trello',
+    problem:
+      'Weekly priorities and recurring administrative tasks lacked a lightweight visual board to separate immediate Today actions from upcoming weekly deliverables.',
+    solution:
+      'Structured a Trello Kanban workspace with Inbox triage, Today, This Week, and Later columns plus card checklists and planner views.',
+    result:
+      'Kept daily execution calm, visual, and immediately scannable for both executive and support teams.',
+    ctaLabel: 'Inspect Trello Board',
+    image: project10Img,
+    imageAlt: 'Trello visual Kanban board organizing Inbox, Today, This Week, and Later tasks',
+    metrics: ['Visual Kanban Flow', 'Daily Priority Clarity'],
   },
 ];
 

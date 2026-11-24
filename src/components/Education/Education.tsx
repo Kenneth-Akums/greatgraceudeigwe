@@ -47,14 +47,14 @@ export function Education() {
             <div className={styles.degreeList}>
               {EDUCATION.map((item) => (
                 <div key={item.degree} className={styles.degreeItem}>
-                  <div className={styles.degreeIcon}>
-                    <GraduationCap size={20} />
+                  <div className={styles.degreeMetaRow}>
+                    <div className={styles.degreeIcon}>
+                      <GraduationCap size={18} />
+                    </div>
+                    <span className={styles.period}>{item.period}</span>
                   </div>
                   <div className={styles.degreeBody}>
-                    <div className={styles.degreeTop}>
-                      <h3 className={styles.degreeTitle}>{item.degree}</h3>
-                      <span className={styles.period}>{item.period}</span>
-                    </div>
+                    <h3 className={styles.degreeTitle}>{item.degree}</h3>
                     <p className={styles.school}>{item.institution}</p>
                     <p className={styles.focus}>{item.focus}</p>
                   </div>
@@ -82,3 +82,4 @@ export function Education() {
     </section>
   );
 }
+
