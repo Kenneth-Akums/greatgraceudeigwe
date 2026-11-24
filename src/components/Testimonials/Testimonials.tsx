@@ -1,13 +1,9 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Play, Quote, Star } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
 import { TESTIMONIALS } from '../../data/portfolio';
 import styles from './Testimonials.module.css';
 
-interface TestimonialsProps {
-  onOpenLiveReview: () => void;
-}
-
-export function Testimonials({ onOpenLiveReview }: TestimonialsProps) {
+export function Testimonials() {
   return (
     <section id="testimonials" className={styles.section}>
       <div className={styles.orbTop} aria-hidden="true" />
@@ -62,27 +58,6 @@ export function Testimonials({ onOpenLiveReview }: TestimonialsProps) {
               </div>
             </motion.article>
           ))}
-        </div>
-
-        <div className={styles.liveWrap}>
-          <button
-            type="button"
-            className={styles.liveCard}
-            onClick={onOpenLiveReview}
-          >
-            <div className={styles.liveLeft}>
-              <span className={styles.livePlayCircle}>
-                <Play size={18} fill="currentColor" />
-              </span>
-              <div className={styles.liveText}>
-                <span className={styles.liveName}>Kenneth Akunwanne</span>
-                <span className={styles.liveSub}>
-                  Watch Live Video Review • MFG Strategies
-                </span>
-              </div>
-            </div>
-            <ArrowRight size={18} className={styles.liveArrow} />
-          </button>
         </div>
       </div>
     </section>

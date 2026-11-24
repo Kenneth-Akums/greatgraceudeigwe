@@ -23,7 +23,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function App() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
-  const [liveReviewOpen, setLiveReviewOpen] = useState(false);
   const [activeProject, setActiveProject] = useState<CaseStudy | null>(null);
 
   useEffect(() => {
@@ -62,7 +61,7 @@ export function App() {
         <ServicesStack />
         <TechStack />
         <CaseStudies onInspectProject={(project) => setActiveProject(project)} />
-        <Testimonials onOpenLiveReview={() => setLiveReviewOpen(true)} />
+        <Testimonials />
         <Contact />
       </main>
 
@@ -90,24 +89,6 @@ export function App() {
               modal.
             </p>
           </div>
-        </div>
-      </Modal>
-
-      {/* Live Review Modal */}
-      <Modal
-        open={liveReviewOpen}
-        onClose={() => setLiveReviewOpen(false)}
-        title="Live Client Review — Kenneth Akunwanne"
-        subtitle="Martinez Financial Group Strategies LLC"
-      >
-        <div className={styles.reviewModalBody}>
-          <p className={styles.modalText}>
-            Connect Kenneth Akunwanne&apos;s video testimonial link or embedded clip here
-            so prospective founders can watch his endorsement directly on the page.
-          </p>
-          <a href="#contact" className={styles.modalCta} onClick={() => setLiveReviewOpen(false)}>
-            Book a Discovery Conversation
-          </a>
         </div>
       </Modal>
 
