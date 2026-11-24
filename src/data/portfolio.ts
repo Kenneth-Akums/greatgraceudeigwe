@@ -1,9 +1,11 @@
 import portraitImg from '../assets/greatgrace-portrait.jpg';
-import project1Img from '../assets/project-1-sheets.png';
-import project2Img from '../assets/project-2-travel.png';
+import officePortraitImg from '../assets/greatgrace-office.jpg';
+import project1Img from '../assets/project-1-budget.png';
+import project2Img from '../assets/project-2-singapore.jpg';
 import project3Img from '../assets/project-3-sops.png';
-import project4Img from '../assets/project-4-clickup.png';
-import project5Img from '../assets/project-5-calendar.png';
+import project4Img from '../assets/project-4-clickup-dark.jpg';
+import project5Img from '../assets/project-5-inbox.jpg';
+import project6Img from '../assets/project-6-meetings.jpg';
 import logoVerionX from '../assets/logo-verionx.png';
 import logoMavenAide from '../assets/logo-mavenaide.png';
 import logoLoveworld from '../assets/logo-loveworld.png';
@@ -42,6 +44,7 @@ export const PROFILE = {
   instagram: 'https://instagram.com',
   availability: 'Available for Select Engagements',
   portrait: portraitImg,
+  officePortrait: officePortraitImg,
 };
 
 export const NAV_LINKS = [
@@ -80,6 +83,28 @@ export const MILESTONES = [
     company: 'Loveworld Inc.',
     tag: 'Systems Setup',
   },
+];
+
+export const EDUCATION = [
+  {
+    degree: 'B.A. International Management',
+    institution: 'IU International University of Applied Sciences, Berlin',
+    period: '2024 – 2026',
+    focus: 'Streamlining executive workflows, international operations, and cross-functional communication.',
+  },
+  {
+    degree: 'B.Sc. Human Nutrition & Dietetics',
+    institution: 'Michael Okpara University of Agriculture, Umudike',
+    period: '2017 – 2022',
+    focus: 'Built strong analytical rigor, confidentiality discipline, and structured multi-task execution.',
+  },
+];
+
+export const CERTIFICATIONS = [
+  { title: 'Virtual Assistant Certification', issuer: 'ALX Africa' },
+  { title: 'IELTS Academic (Band 7)', issuer: 'IDP Education' },
+  { title: 'Google Digital Marketing & E-commerce', issuer: 'Coursera' },
+  { title: 'Data Analytics & Visualization', issuer: '3MTT NITDA' },
 ];
 
 export interface ServicePillar {
@@ -172,11 +197,22 @@ export const TOOLS = [
   { name: 'ChatGPT & AI', category: 'Synthesis & Workflows', logo: toolChatGPT },
 ];
 
-export const EXTRA_TOOLS = [
+export interface ExtraTool {
+  name: string;
+  logo?: string;
+}
+
+export const EXTRA_TOOLS: ExtraTool[] = [
   { name: 'Zoom', logo: toolZoom },
   { name: 'Microsoft Teams', logo: toolTeams },
   { name: 'Trello', logo: toolTrello },
+  { name: 'Calendly' },
+  { name: 'Zoho Bookings' },
   { name: 'Shopify Connect', logo: toolShopify },
+  { name: 'Brevo' },
+  { name: 'Mailmeteor' },
+  { name: 'GMass' },
+  { name: 'Mergo' },
   { name: 'Meta Suite', logo: toolMeta },
   { name: 'Claude AI', logo: toolClaude },
   { name: 'CapCut', logo: toolCapCut },
@@ -199,42 +235,47 @@ export interface CaseStudy {
   image: string;
   imageAlt: string;
   metrics: string[];
+  externalUrl?: string;
+  externalLabel?: string;
 }
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'budget-systems',
     number: '01',
-    client: 'Martinez Financial Group Strategies LLC',
+    client: 'Executive Operations & Events',
     tool: 'Google Sheets',
-    title: 'Financial Planning & Budget Systems',
+    title: 'Financial Planning, Vendor & Budget Systems',
     problem:
-      'No structured system to track monthly budget, spending leakages, and revenue trajectory in one place.',
+      'No centralized structure to track event vendor quotes, monthly budgets, spending leakages, and confirmation statuses in one place.',
     solution:
-      'Designed a clean, executive budget template with Income, Transactions, and Dashboard tabs to monitor monthly cashflow continuously.',
+      'Built clean executive Google Sheets trackers combining vendor contacts, live cost estimates, status tags, and automated cost comparison charts.',
     result:
-      'Eliminated guesswork around monthly spending, centralized team budget reporting, and enabled faster data-backed leadership decisions.',
-    ctaLabel: 'Inspect Google Sheets System',
+      'Eliminated guesswork around spending, centralized budget reporting, and enabled faster, data-backed leadership decisions.',
+    ctaLabel: 'Inspect Budget & Vendor System',
     image: project1Img,
-    imageAlt: 'Google Sheets budget dashboard built for Martinez Financial Group Strategies LLC',
-    metrics: ['100% Cashflow Visibility', '3-Step Executive Workflow'],
+    imageAlt: 'Google Sheets vendor and budget tracker with live cost comparison chart',
+    metrics: ['100% Budget Visibility', 'Automated Cost Charts'],
   },
   {
     id: 'travel-logistics',
     number: '02',
-    client: 'C-Suite Logistics',
+    client: 'C-Suite Global Logistics',
     tool: 'Google Slides',
     title: 'Executive Travel Coordination & Logistics',
     problem:
-      'High-stakes multi-day international trip to Cape Town across multiple time zones with zero margin for flight delays or scheduling gaps.',
+      'High-stakes international executive trips (Singapore & Cape Town) across multiple time zones with zero margin for flight delays or scheduling gaps.',
     solution:
-      'Built an end-to-end executive travel pack covering flights, hotel bookings, VIP ground transfers, and day-by-day meeting itineraries.',
+      'Designed end-to-end 7-day executive travel packs covering flights, hotel bookings, VIP ground transfers, and day-by-day meeting itineraries.',
     result:
-      'Delivered a polished, ready-to-use travel pack with zero logistics oversights and complete peace of mind from departure to return.',
-    ctaLabel: 'Inspect Cape Town Travel Pack',
+      'Delivered polished, boardroom-ready travel decks with zero logistics oversights and complete peace of mind from departure to return.',
+    ctaLabel: 'Inspect Executive Travel Pack',
     image: project2Img,
-    imageAlt: 'Executive travel pack presentation deck for Cape Town trip',
+    imageAlt: '7-Day Executive Travel Plan presentation deck for Singapore Market Expansion',
     metrics: ['Zero Logistics Gaps', 'End-to-End Concierge'],
+    externalUrl:
+      'https://docs.google.com/presentation/d/1GRDPSPOJTYHB18--CPIDRQEKNOSO27MN4XG9JFM2D7S/edit?usp=sharing',
+    externalLabel: 'Open Live Google Slides Deck',
   },
   {
     id: 'sop-architecture',
@@ -256,36 +297,53 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     id: 'clickup-ops',
     number: '04',
-    client: 'MFG Financial Consulting',
-    tool: 'ClickUp Ecosystem',
+    client: 'Product & Consulting Operations',
+    tool: 'ClickUp & Airtable',
     title: 'Project Management Systems in ClickUp',
     problem:
-      'Client deliverables, outreach, and admin tasks scattered across chat messages with no centralized visibility or priority tracking.',
+      'Client deliverables, launch milestones, and cross-functional sprints scattered across messages with no centralized priority visibility.',
     solution:
-      'Built and managed a unified ClickUp board with To-Do, In-Progress, and Complete stages, priority tags, owners, and deadlines.',
+      'Architected a unified ClickUp Kanban & Airtable launch workspace with Not Started, In Progress, Testing/QA, and Launch Complete stages plus priority flags.',
     result:
-      'Transformed a scattered workflow into clear daily accountability so leadership focused on growth instead of chasing updates.',
+      'Transformed scattered tasks into clear daily accountability so leadership focused on growth instead of chasing updates.',
     ctaLabel: 'Inspect ClickUp Workspace',
     image: project4Img,
-    imageAlt: 'ClickUp operations board managing client tasks and outreach for MFG',
+    imageAlt: 'Dark-mode ClickUp Kanban operations board managing launch milestones',
     metrics: ['Zero Missed Follow-Ups', 'Full Sprint Visibility'],
   },
   {
     id: 'calendar-inbox',
     number: '05',
     client: 'Executive Office',
-    tool: 'Google Calendar & Gmail',
-    title: 'Calendar & Inbox Management',
+    tool: 'Gmail & Google Calendar',
+    title: 'Calendar Defense & Inbox Triage',
     problem:
       'Overloaded executive inbox burying urgent messages alongside overlapping calendar appointments causing constant scheduling conflicts.',
     solution:
-      'Implemented inbox triage rules, priority labeling, drafted responses, calendar conflict audits, and color-coded deep-focus time blocking.',
+      'Implemented color-coded Gmail priority labels (URGENT, DEADLINE, REPLY, CONFIRM RECEIPT, MEETINGS), automated filters, and deep-focus calendar time blocking.',
     result:
-      'Maintained Inbox Zero daily, eliminated scheduling conflicts, and reclaimed 12+ hours of uninterrupted leadership focus every week.',
-    ctaLabel: 'Inspect Calendar & Triage System',
+      'Eliminated inbox overwhelm, prevented scheduling conflicts, and reclaimed 12–15+ hours of uninterrupted leadership focus every week.',
+    ctaLabel: 'Inspect Inbox Triage System',
     image: project5Img,
-    imageAlt: 'Color-coded time-blocked Google Calendar and organized executive inbox',
-    metrics: ['Inbox Zero Daily', '12+ hrs/wk Reclaimed'],
+    imageAlt: 'Color-coded Gmail inbox prioritized with Urgent, Deadline, Reply, and Confirm Receipt labels',
+    metrics: ['Inbox Zero Daily', '15+ hrs/wk Reclaimed'],
+  },
+  {
+    id: 'meeting-governance',
+    number: '06',
+    client: 'GAO TEK RFID & Leadership Teams',
+    tool: 'Google Docs & Calendly',
+    title: 'Executive Meeting Governance & Minutes',
+    problem:
+      'Weekly leadership syncs lacked structured agendas and documented ownership, causing key action items to slip between meetings.',
+    solution:
+      'Standardized structured weekly sync agendas, facilitated meetings, and delivered crisp Meeting Minutes with owners and strict due dates.',
+    result:
+      'Achieved 100% agenda coverage, crystal-clear team accountability, and effortless follow-through across remote stakeholders.',
+    ctaLabel: 'Inspect Meeting Minutes System',
+    image: project6Img,
+    imageAlt: 'Structured executive Meeting Minutes document with summary and assigned action points',
+    metrics: ['100% Agenda Coverage', 'Owner-Tracked Actions'],
   },
 ];
 

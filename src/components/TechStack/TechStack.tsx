@@ -134,12 +134,16 @@ export function TechStack() {
               <div className={styles.marqueeTrack}>
                 {[...EXTRA_TOOLS, ...EXTRA_TOOLS].map((tool, i) => (
                   <span key={`${tool.name}-${i}`} className={styles.marqueeChip}>
-                    <img
-                      src={tool.logo}
-                      alt=""
-                      aria-hidden="true"
-                      className={styles.marqueeLogo}
-                    />
+                    {tool.logo ? (
+                      <img
+                        src={tool.logo}
+                        alt=""
+                        aria-hidden="true"
+                        className={styles.marqueeLogo}
+                      />
+                    ) : (
+                      <span className={styles.marqueeDot} aria-hidden="true" />
+                    )}
                     <span>{tool.name}</span>
                   </span>
                 ))}

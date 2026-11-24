@@ -8,6 +8,7 @@ import { ScrollProgress } from './components/ScrollProgress/ScrollProgress';
 import { Navbar } from './components/Navbar/Navbar';
 import { Hero } from './components/Hero/Hero';
 import { About } from './components/About/About';
+import { Education } from './components/Education/Education';
 import { ServicesStack } from './components/ServicesStack/ServicesStack';
 import { TechStack } from './components/TechStack/TechStack';
 import { CaseStudies } from './components/CaseStudies/CaseStudies';
@@ -57,6 +58,7 @@ export function App() {
       <main>
         <Hero />
         <About onOpenVideo={() => setVideoModalOpen(true)} />
+        <Education />
         <ServicesStack />
         <TechStack />
         <CaseStudies onInspectProject={(project) => setActiveProject(project)} />
@@ -141,6 +143,18 @@ export function App() {
                 <p>{activeProject.result}</p>
               </div>
             </div>
+            {activeProject.externalUrl && (
+              <div className={styles.caseModalActions}>
+                <a
+                  href={activeProject.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.modalCta}
+                >
+                  {activeProject.externalLabel ?? 'Open Live Project'}
+                </a>
+              </div>
+            )}
           </div>
         )}
       </Modal>

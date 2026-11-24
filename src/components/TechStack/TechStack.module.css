@@ -261,6 +261,15 @@
   flex-shrink: 0;
 }
 
+.marqueeDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  margin-left: 0.25rem;
+  flex-shrink: 0;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

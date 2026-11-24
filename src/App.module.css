@@ -99,6 +99,12 @@
   margin-bottom: 0.2rem;
 }
 
+.caseModalActions {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 0.25rem;
+}
+
 @media (min-width: 640px) {
   .caseModalGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
